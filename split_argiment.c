@@ -6,7 +6,7 @@
 /*   By: ybounite <ybounite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 16:18:49 by ybounite          #+#    #+#             */
-/*   Updated: 2025/01/30 14:46:25 by ybounite         ###   ########.fr       */
+/*   Updated: 2025/01/30 17:54:18 by ybounite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,19 +69,6 @@ int	word(char *str, char space)
 			i++;
 	}
 	return (len);
-}
-
-void	ft_free(char **result, int count)
-{
-	int	i;
-
-	i = 0;
-	while (i < count)
-	{
-		free(result[i]);
-		i++;
-	}
-	free(result);
 }
 
 void	ft_split_argemenet(int ac, char **av, t_data *data)

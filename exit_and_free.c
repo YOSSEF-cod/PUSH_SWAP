@@ -6,7 +6,7 @@
 /*   By: ybounite <ybounite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 10:26:25 by ybounite          #+#    #+#             */
-/*   Updated: 2025/01/30 10:28:59 by ybounite         ###   ########.fr       */
+/*   Updated: 2025/01/30 18:48:36 by ybounite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,19 @@ void	ft_nodeclear(t_stack_a **lst)
 		free(ptr);
 	}
 }
+void	ft_nodeclear_b(t_stack_b **lst)
+{
+	t_stack_b *ptr;
 
+	if (!lst || !(*lst))
+		return ;
+	while (*lst != NULL)
+	{
+		ptr = *lst;
+		*lst = (*lst)->next;
+		free(ptr);
+	}
+}
 void	ft_free_arge(t_data	*data)
 {
 	int (i);
@@ -44,6 +56,15 @@ void	ft_free_arge(t_data	*data)
 		i++;
 	}
 	free(data->arv);
+}
+
+void	print_list_b(t_stack_b *list)
+{
+	while (list)
+	{
+		printf("%d ", list->data);
+		list = list->next;
+	}
 }
 void	print_list(t_stack_a *list)
 {

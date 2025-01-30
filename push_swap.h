@@ -6,7 +6,7 @@
 /*   By: ybounite <ybounite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 21:15:30 by ybounite          #+#    #+#             */
-/*   Updated: 2025/01/30 10:29:29 by ybounite         ###   ########.fr       */
+/*   Updated: 2025/01/30 18:50:42 by ybounite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ typedef struct s_stack_a
 typedef struct s_stack_b
 {
 	int data;
-	struct push_swap *next;
+	struct s_stack_b *next;
 }	t_stack_b;
 t_stack_a	*ft_creat_node(int content);
 
@@ -54,7 +54,14 @@ int		ft_atoi_max_int(char *str, t_data *data, t_stack_a **stack_a);
 // exit_and_free.c
 int		exit_failure(t_data *data, t_stack_a **stack_a);
 void	ft_nodeclear(t_stack_a **lst);
+void	ft_nodeclear_b(t_stack_b **lst);
 void	ft_free_arge(t_data	*data);
 void	print_list(t_stack_a *list);//
+void	print_list_b(t_stack_b *list);
+// rulse_push
+int		push_stack_a(t_stack_a **stack_a, t_stack_b **stack_b);
+int		pa(t_stack_a **stack_a, t_stack_b **stack_b);
+int		push_stack_b(t_stack_a **stack_a, t_stack_b **stack_b);
+int		pb(t_stack_a **stack_a, t_stack_b **stack_b);
 
 #endif

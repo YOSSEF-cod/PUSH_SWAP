@@ -6,7 +6,7 @@
 /*   By: ybounite <ybounite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 21:16:48 by ybounite          #+#    #+#             */
-/*   Updated: 2025/01/30 16:17:59 by ybounite         ###   ########.fr       */
+/*   Updated: 2025/01/30 19:13:25 by ybounite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,22 @@ int	check_if_sort(t_stack_a *stack_a)
 	}
 	return (1);
 }
+void	sort_argiment(t_stack_a **stack_a, t_stack_b **stack_b, t_data *data)
+{
+	(void)data;
+	(void)stack_b;
+	if(data->arc == 2)
+		sa(stack_a);
+	// else (data->arc == 3)
+	// {
+		
+	// }
 
+}
 int	main(int ac, char **av)
 {
 	t_stack_a	*stack_a;
+	t_stack_b	*stack_b;
 	t_data		data;
 	ft_bzero(&stack_a, sizeof(t_stack_a));
 	ft_bzero(&data, sizeof(t_data));
@@ -45,8 +57,10 @@ int	main(int ac, char **av)
 	full_stack(&data, &stack_a);
 	if (check_if_sort(stack_a))
 		return (ft_nodeclear(&stack_a), ft_free_arge(&data), 0);
-	printf("not sorting !\n");
+	sort_argiment(&stack_a, &stack_b, &data);
+	print_list_b(stack_b);
 	print_list(stack_a);//
+	ft_nodeclear_b(&stack_b);
 	ft_nodeclear(&stack_a);
 	ft_free_arge(&data);
 }
