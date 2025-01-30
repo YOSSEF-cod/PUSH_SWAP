@@ -5,7 +5,7 @@ CFLAGS = -Wall -Wextra -Werror
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
-SRCS = push_swap.c free_content.c rules_swap.c
+SRCS = push_swap.c add_node_back.c split_argiment.c push_swap_utlis.c rules_swap.c exit_and_free.c
 
 OBJ = $(SRCS:.c=.o)
 
