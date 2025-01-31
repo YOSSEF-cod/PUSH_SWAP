@@ -6,7 +6,7 @@
 /*   By: ybounite <ybounite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 17:48:56 by ybounite          #+#    #+#             */
-/*   Updated: 2025/01/30 19:01:19 by ybounite         ###   ########.fr       */
+/*   Updated: 2025/01/31 16:24:08 by ybounite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	push_stack_a(t_stack_a **stack_a, t_stack_b **stack_b)
 	while (temp)
 	{
 		*stack_b = (*stack_b)->next;
-		temp->next = (t_stack_b *)stack_a;
+		temp->next = (t_stack_b *)(*stack_a);
 		*stack_a = (t_stack_a *)temp;
 		break ;
 	}
