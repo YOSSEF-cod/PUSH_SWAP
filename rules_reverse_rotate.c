@@ -6,7 +6,7 @@
 /*   By: ybounite <ybounite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 09:46:55 by ybounite          #+#    #+#             */
-/*   Updated: 2025/01/31 16:09:01 by ybounite         ###   ########.fr       */
+/*   Updated: 2025/02/01 19:15:20 by ybounite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int	reverse_rotate_stack_a(t_stack_a **stack_a)
 {
-	t_stack_a *last;
-	t_stack_a *second_last;
+	t_stack_a	*last;
+	t_stack_a	*second_last;
+
 	if (!stack_a || !(*stack_a))
 		return (0);
 	last = *stack_a;
@@ -32,8 +33,9 @@ int	reverse_rotate_stack_a(t_stack_a **stack_a)
 
 int	reverse_rotate_stack_b(t_stack_b **stack_b)
 {
-	t_stack_b *last;
-	t_stack_b *second_last;
+	t_stack_b	*last;
+	t_stack_b	*second_last;
+
 	if (!stack_b || !(*stack_b))
 		return (0);
 	last = *stack_b;
@@ -48,7 +50,7 @@ int	reverse_rotate_stack_b(t_stack_b **stack_b)
 	return (1);
 }
 
-int rra(t_stack_a **stack_a)
+int	rra(t_stack_a **stack_a)
 {
 	if (!reverse_rotate_stack_a(stack_a))
 		return (0);

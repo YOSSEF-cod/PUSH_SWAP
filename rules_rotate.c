@@ -6,7 +6,7 @@
 /*   By: ybounite <ybounite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 17:49:49 by ybounite          #+#    #+#             */
-/*   Updated: 2025/01/31 16:08:47 by ybounite         ###   ########.fr       */
+/*   Updated: 2025/02/02 18:30:13 by ybounite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	rotate_stack_b(t_stack_b **stack_b)
 {
 	t_stack_b *first;
 	t_stack_b *last;
-	if (!stack_b || !(*stack_b))
+	if (!stack_b || !(*stack_b) || !(*stack_b)->next)
 		return (0);
 	last = *stack_b;
 	first = *stack_b;

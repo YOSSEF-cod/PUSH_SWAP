@@ -6,7 +6,7 @@
 /*   By: ybounite <ybounite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 16:18:49 by ybounite          #+#    #+#             */
-/*   Updated: 2025/01/30 17:54:18 by ybounite         ###   ########.fr       */
+/*   Updated: 2025/02/01 19:19:50 by ybounite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	cont_word(int len, char **av)
 
 int	word(char *str, char space)
 {
-	int	(i), (len);
+	int (i), (len);
 	i = 0;
 	len = 0;
 	while (str[i])
@@ -71,19 +71,17 @@ int	word(char *str, char space)
 	return (len);
 }
 
-void	ft_split_argemenet(int ac, char **av, t_data *data)
+int	ft_split_argemenet(int ac, char **av, t_data *data)
 {
-	char **str;
+	char (**str);
 	int (i), (index), (j);
+
 	i  = 1;
 	index = 0;
 	data->arc = cont_word(ac, av);
-	data->arv = malloc(sizeof(char*) * (data->arc + 1));
+	data->arv = malloc(sizeof(char *) * (data->arc + 1));
 	if (!data->arv)
-	{
-		ft_putendl_fd("Erorr", 2);
-		exit(1);
-	}
+		return (ft_putendl_fd("Erorr", 2), exit(1), 1);
 	while (i < ac)
 	{
 		j = 0;
@@ -98,4 +96,5 @@ void	ft_split_argemenet(int ac, char **av, t_data *data)
 		i++;
 	}
 	data->arv[index] = NULL;
+	return (0);
 }

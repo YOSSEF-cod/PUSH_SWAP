@@ -6,11 +6,12 @@
 /*   By: ybounite <ybounite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 17:48:56 by ybounite          #+#    #+#             */
-/*   Updated: 2025/01/31 16:24:08 by ybounite         ###   ########.fr       */
+/*   Updated: 2025/02/03 15:39:36 by ybounite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 
 int	push_stack_b(t_stack_a **stack_a, t_stack_b **stack_b)
 {
@@ -28,18 +29,6 @@ int	push_stack_b(t_stack_a **stack_a, t_stack_b **stack_b)
 	return (1);
 }
 
-// 	if (!stack_a || !(*stack_a))
-// 		return (0);
-// 	temp = *stack_a;
-// 	while (temp)
-// 	{
-// 		*stack_a = (*stack_a)->next;
-// 		temp->next = (t_stack_a *)(*stack_b);
-// 		*stack_b = (t_stack_b *)temp;
-// 		break ;
-// 	}
-// 	return (1);
-// }
 int	pb(t_stack_a **stack_a, t_stack_b **stack_b)
 {
 	if (!push_stack_b(stack_a, stack_b))
@@ -47,6 +36,7 @@ int	pb(t_stack_a **stack_a, t_stack_b **stack_b)
 	ft_putendl_fd("pb", 1);
 	return (0);
 }
+
 int	push_stack_a(t_stack_a **stack_a, t_stack_b **stack_b)
 {
 	t_stack_b *temp;
@@ -63,10 +53,16 @@ int	push_stack_a(t_stack_a **stack_a, t_stack_b **stack_b)
 	}
 	return (1);
 }
+
 int pa(t_stack_a **stack_a, t_stack_b **stack_b)
 {
 	if (!push_stack_a(stack_a, stack_b))
 		return (1);
 	ft_putendl_fd("pa", 1);
 	return (0);
+}
+
+int	cmp(int a, int b)
+{
+	return (a < b);
 }

@@ -1,13 +1,13 @@
 NAME = push_swap
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+# CFLAGS = -Wall -Wextra -Werror
 
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
 SRCS =	push_swap.c add_node_back.c split_argiment.c push_swap_utlis.c \
-		rules_swap.c rules_push.c rules_rotate.c  rules_reverse_rotate.c \
-		exit_and_free.c
+		rules_swap.c rules_push.c rules_rotate.c rules_reverse_rotate.c \
+		sort_argement.c algorithem.c exit_and_free.c
 
 OBJ = $(SRCS:.c=.o)
 
@@ -30,3 +30,4 @@ fclean: clean
 	rm -f $(NAME)
 	$(MAKE) -C $(LIBFT_DIR) fclean
 
+re: fclean all

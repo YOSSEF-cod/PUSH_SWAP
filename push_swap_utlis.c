@@ -6,7 +6,7 @@
 /*   By: ybounite <ybounite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 15:52:56 by ybounite          #+#    #+#             */
-/*   Updated: 2025/01/30 16:02:39 by ybounite         ###   ########.fr       */
+/*   Updated: 2025/02/03 09:47:46 by ybounite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,11 @@ int	ft_atoi_max_int(char *str, t_data *data, t_stack_a **stack_a)
 	}
 	return (nbr * r);
 }
+
 void	check_is_repetition(t_data *data, t_stack_a **stack_a)
 {
-	t_stack_a *ptr;
-	t_stack_a *tmp;
+	t_stack_a	*ptr;
+	t_stack_a	*tmp;
 
 	if (!stack_a || !(*stack_a))
 		exit_failure(data, stack_a);
@@ -57,15 +58,20 @@ void	check_is_repetition(t_data *data, t_stack_a **stack_a)
 		ptr = ptr->next;
 	}
 }
+
 void	full_stack(t_data *data, t_stack_a **stack_a)
 {
-	int	(i), (value);
+	int (i), (value);
 	i = 0;
+	
+	data->tap = malloc(sizeof(int) * data->arc);
+	if (!data->tap)
+		return ;
 	check_isdigit(data, stack_a);
 	while (i < data->arc)
 	{
-		
 		value = ft_atoi_max_int(data->arv[i], data, stack_a);
+		data->tap[i] = value;
 		lstadd_back(stack_a, ft_creat_node(value));
 		i++;
 	}

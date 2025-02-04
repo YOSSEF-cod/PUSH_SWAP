@@ -6,7 +6,7 @@
 /*   By: ybounite <ybounite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 10:26:25 by ybounite          #+#    #+#             */
-/*   Updated: 2025/01/30 18:48:36 by ybounite         ###   ########.fr       */
+/*   Updated: 2025/02/03 09:31:36 by ybounite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,10 @@ void	ft_free_arge(t_data	*data)
 		free(data->arv[i]);
 		i++;
 	}
+	free(data->tap);
+	data->tap = NULL;
 	free(data->arv);
+	data->arv = NULL;
 }
 
 void	print_list_b(t_stack_b *list)

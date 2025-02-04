@@ -6,16 +6,16 @@
 /*   By: ybounite <ybounite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 11:56:24 by ybounite          #+#    #+#             */
-/*   Updated: 2025/01/30 17:51:09 by ybounite         ###   ########.fr       */
+/*   Updated: 2025/02/03 15:50:04 by ybounite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int swap_stack_a(t_stack_a **stack_a)
+int	swap_stack_a(t_stack_a **stack_a)
 {
-	t_stack_a *second;
-	t_stack_a *ptr;
+	t_stack_a	*second;
+	t_stack_a	*ptr;
 
 	if (!stack_a || !(*stack_a) || !(*stack_a)->next)
 		return (0);
@@ -27,7 +27,7 @@ int swap_stack_a(t_stack_a **stack_a)
 	return (1);
 }
 
-int swap_stack_b(t_stack_b **stack_b)
+int	swap_stack_b(t_stack_b **stack_b)
 {
 	t_stack_b	*ptr;
 	t_stack_b	*second;
@@ -47,7 +47,7 @@ int	sa(t_stack_a	**stack_a)
 	if (!swap_stack_a(stack_a))
 		return (1);
 	ft_putendl_fd("sa", 1);
-	return 0;
+	return (0);
 }
 
 int	sb(t_stack_b **stack_b)
