@@ -6,15 +6,15 @@
 /*   By: ybounite <ybounite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 21:16:48 by ybounite          #+#    #+#             */
-/*   Updated: 2025/02/03 17:45:09 by ybounite         ###   ########.fr       */
+/*   Updated: 2025/02/05 09:06:12 by ybounite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_if_sort(t_stack_a *stack_a)
+int	check_if_sort(t_stack *stack_a)
 {
-	t_stack_a	*tmp;
+	t_stack	*tmp;
 
 	tmp = stack_a;
 	if (!stack_a)
@@ -28,10 +28,10 @@ int	check_if_sort(t_stack_a *stack_a)
 	return (1);
 }
 
-int	min_nber(t_stack_a **stack_a)
+int	min_nber(t_stack **stack_a)
 {
-	t_stack_a	*list;
-	int			min;
+	t_stack	*list;
+	int		min;
 
 	if (!stack_a || !(*stack_a))
 		return (exit(EXIT_FAILURE), 0);
@@ -69,11 +69,11 @@ void	sort_table(t_data *dtat)
 
 int	main(int ac, char **av)
 {
-	t_stack_a	*stack_a;
-	t_stack_b	*stack_b;
-	t_data		data;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+	t_data	data;
 
-	ft_bzero(&stack_a, sizeof(t_stack_a));
+	ft_bzero(&stack_a, sizeof(t_stack));
 	ft_bzero(&data, sizeof(t_data));
 	if (ac == 1)
 		exit(EXIT_SUCCESS);
@@ -83,11 +83,7 @@ int	main(int ac, char **av)
 		return (ft_nodeclear(&stack_a), ft_free_arge(&data), 0);
 	sort_table(&data);
 	sort_argiment(&stack_a, &stack_b, &data);
-	// printf("stack b : \n");
-	// print_list_b(stack_b);
-	// printf("\nstack a : \n");
-	// print_list(stack_a);
-	ft_nodeclear_b(&stack_b);
+	ft_nodeclear(&stack_b);
 	ft_nodeclear(&stack_a);
 	ft_free_arge(&data);
 }

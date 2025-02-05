@@ -6,7 +6,7 @@
 /*   By: ybounite <ybounite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 16:18:49 by ybounite          #+#    #+#             */
-/*   Updated: 2025/02/01 19:19:50 by ybounite         ###   ########.fr       */
+/*   Updated: 2025/02/04 10:08:02 by ybounite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,11 +73,12 @@ int	word(char *str, char space)
 
 int	ft_split_argemenet(int ac, char **av, t_data *data)
 {
-	char (**str);
-	int (i), (index), (j);
+	char	**str;
+	int		i;
+	int		j;
 
-	i  = 1;
-	index = 0;
+	i = 1;
+	data->index = 0;
 	data->arc = cont_word(ac, av);
 	data->arv = malloc(sizeof(char *) * (data->arc + 1));
 	if (!data->arv)
@@ -88,13 +89,13 @@ int	ft_split_argemenet(int ac, char **av, t_data *data)
 		str = ft_split(av[i], ' ');
 		while (j < word(av[i], ' '))
 		{
-			data->arv[index] = str[j];
-			index++;
+			data->arv[data->index] = str[j];
+			data->index++;
 			j++;
 		}
 		free(str);
 		i++;
 	}
-	data->arv[index] = NULL;
+	data->arv[data->index] = NULL;
 	return (0);
 }

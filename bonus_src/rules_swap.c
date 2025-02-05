@@ -6,16 +6,16 @@
 /*   By: ybounite <ybounite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 11:56:24 by ybounite          #+#    #+#             */
-/*   Updated: 2025/02/03 15:50:04 by ybounite         ###   ########.fr       */
+/*   Updated: 2025/02/04 18:04:32 by ybounite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
-int	swap_stack_a(t_stack_a **stack_a)
+int	swap_stack_a(t_stack **stack_a)
 {
-	t_stack_a	*second;
-	t_stack_a	*ptr;
+	t_stack	*second;
+	t_stack	*ptr;
 
 	if (!stack_a || !(*stack_a) || !(*stack_a)->next)
 		return (0);
@@ -27,10 +27,10 @@ int	swap_stack_a(t_stack_a **stack_a)
 	return (1);
 }
 
-int	swap_stack_b(t_stack_b **stack_b)
+int	swap_stack_b(t_stack **stack_b)
 {
-	t_stack_b	*ptr;
-	t_stack_b	*second;
+	t_stack	*ptr;
+	t_stack	*second;
 
 	if (!stack_b || !(*stack_b) || !(*stack_b)->next)
 		return (0);
@@ -42,23 +42,21 @@ int	swap_stack_b(t_stack_b **stack_b)
 	return (1);
 }
 
-int	sa(t_stack_a	**stack_a)
+int	sa(t_stack	**stack_a)
 {
 	if (!swap_stack_a(stack_a))
 		return (1);
-	ft_putendl_fd("sa", 1);
 	return (0);
 }
 
-int	sb(t_stack_b **stack_b)
+int	sb(t_stack **stack_b)
 {
 	if (!swap_stack_b(stack_b))
 		return (1);
-	ft_putendl_fd("sb", 1);
 	return (0);
 }
 
-int	ss(t_stack_a **stack_a, t_stack_b **stack_b)
+int	ss(t_stack **stack_a, t_stack **stack_b)
 {
 	if (sa(stack_a) || sb(stack_b))
 		return (1);

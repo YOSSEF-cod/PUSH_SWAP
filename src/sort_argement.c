@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	sort_three_argument(t_stack_a **stack_a)
+void	sort_three_argument(t_stack **stack_a)
 {
 	int (n1), (n2), (n3);
 	n1 = (*stack_a)->data;
@@ -33,10 +33,10 @@ void	sort_three_argument(t_stack_a **stack_a)
 	{
 		sa(stack_a);
 		rra(stack_a);
-	}	
+	}
 }
 
-void	sort_four_argument(t_stack_a **stack_a, t_stack_b **stack_b)
+void	sort_four_argument(t_stack **stack_a, t_stack **stack_b)
 {
 	int (n1), (n2), (n3), (n4);
 	n1 = (*stack_a)->data;
@@ -65,7 +65,7 @@ void	sort_four_argument(t_stack_a **stack_a, t_stack_b **stack_b)
 	pa(stack_a, stack_b);
 }
 
-int	check_position_min(t_stack_a **stack_a)
+int	check_position_min(t_stack **stack_a)
 {
 	int (n1), (n2), (n3), (n4), (n5);
 	n1 = (*stack_a)->data;
@@ -84,7 +84,7 @@ int	check_position_min(t_stack_a **stack_a)
 	return (5);
 }
 
-void	sort_five_argumenet(t_stack_a **stack_a, t_stack_b **stack_b)
+void	sort_five_argumenet(t_stack **stack_a, t_stack **stack_b)
 {
 	if (check_position_min(stack_a) == 1)
 		pb(stack_a, stack_b);
@@ -110,12 +110,12 @@ void	sort_five_argumenet(t_stack_a **stack_a, t_stack_b **stack_b)
 		rra(stack_a);
 		pb(stack_a, stack_b);
 	}
-	sort_four_argument(stack_a,stack_b);
+	sort_four_argument(stack_a, stack_b);
 }
 
-void	sort_argiment(t_stack_a **stack_a, t_stack_b **stack_b, t_data *data)
+void	sort_argiment(t_stack **stack_a, t_stack **stack_b, t_data *data)
 {
-	if(data->arc == 2)
+	if (data->arc == 2)
 		sa(stack_a);
 	else if (data->arc == 3)
 		sort_three_argument(stack_a);
@@ -126,6 +126,6 @@ void	sort_argiment(t_stack_a **stack_a, t_stack_b **stack_b, t_data *data)
 		sort_five_argumenet(stack_a, stack_b);
 		pa(stack_a, stack_b);
 	}
-	else 
-		sort_all(stack_a, stack_b, data);//
+	else
+		sort_all(stack_a, stack_b, data);
 }

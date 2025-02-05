@@ -6,16 +6,16 @@
 /*   By: ybounite <ybounite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 09:46:55 by ybounite          #+#    #+#             */
-/*   Updated: 2025/02/01 19:15:20 by ybounite         ###   ########.fr       */
+/*   Updated: 2025/02/04 18:15:05 by ybounite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
-int	reverse_rotate_stack_a(t_stack_a **stack_a)
+int	reverse_rotate_stack_a(t_stack **stack_a)
 {
-	t_stack_a	*last;
-	t_stack_a	*second_last;
+	t_stack	*last;
+	t_stack	*second_last;
 
 	if (!stack_a || !(*stack_a))
 		return (0);
@@ -31,10 +31,10 @@ int	reverse_rotate_stack_a(t_stack_a **stack_a)
 	return (1);
 }
 
-int	reverse_rotate_stack_b(t_stack_b **stack_b)
+int	reverse_rotate_stack_b(t_stack **stack_b)
 {
-	t_stack_b	*last;
-	t_stack_b	*second_last;
+	t_stack	*last;
+	t_stack	*second_last;
 
 	if (!stack_b || !(*stack_b))
 		return (0);
@@ -50,25 +50,17 @@ int	reverse_rotate_stack_b(t_stack_b **stack_b)
 	return (1);
 }
 
-int	rra(t_stack_a **stack_a)
+int	rra(t_stack **stack_a)
 {
-	if (!reverse_rotate_stack_a(stack_a))
-		return (0);
-	ft_putendl_fd("rra", 1);
-	return (1);
+	return (reverse_rotate_stack_a(stack_a));
 }
 
-int	rrb(t_stack_b **stack_b)
+int	rrb(t_stack **stack_b)
 {
-	if (!reverse_rotate_stack_b(stack_b))
-		return (0);
-	ft_putendl_fd("rrb", 1);
-	return (1);
+	return (reverse_rotate_stack_b(stack_b));
 }
 
-int	rrr(t_stack_a **stack_a, t_stack_b **stack_b)
+int	rrr(t_stack **stack_a, t_stack **stack_b)
 {
-	if (!rra(stack_a) || !rrb(stack_b))
-		return (0);
-	return (1);
+	return (rra(stack_a) && rrb(stack_b));
 }

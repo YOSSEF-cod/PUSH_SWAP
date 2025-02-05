@@ -5,6 +5,8 @@
 		"type_traits": "c",
 		"charconv": "c",
 		"random": "c",
-		"push_swap.h": "c"
+		"push_swap.h": "c",
+		"sstream": "c",
+		"push_swap_bonus.h": "c"
 	}
 }
