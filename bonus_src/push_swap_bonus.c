@@ -6,7 +6,7 @@
 /*   By: ybounite <ybounite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 13:38:02 by ybounite          #+#    #+#             */
-/*   Updated: 2025/02/05 16:43:43 by ybounite         ###   ########.fr       */
+/*   Updated: 2025/02/06 11:07:18 by ybounite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int	main(int ac, char **av)
 	ft_split_argemenet(ac, av, &data);
 	full_stack(&data, &stack_a);
 	ft_checker(&stack_a, &stack_b, &data);
+	// print_list(stack_a);
+	// print_list(stack_b);
 	if (check_if_sort(stack_a) && !stack_b)
 		return (ft_putendl_fd("OK", 1),
 			ft_free_all(&stack_a, &stack_b, &data), 0);

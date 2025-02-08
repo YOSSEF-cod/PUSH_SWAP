@@ -6,7 +6,7 @@
 /*   By: ybounite <ybounite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 11:56:24 by ybounite          #+#    #+#             */
-/*   Updated: 2025/02/04 18:04:32 by ybounite         ###   ########.fr       */
+/*   Updated: 2025/02/06 09:32:56 by ybounite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,20 +45,18 @@ int	swap_stack_b(t_stack **stack_b)
 int	sa(t_stack	**stack_a)
 {
 	if (!swap_stack_a(stack_a))
-		return (1);
-	return (0);
+		return (0);
+	return (1);
 }
 
 int	sb(t_stack **stack_b)
 {
 	if (!swap_stack_b(stack_b))
-		return (1);
-	return (0);
+		return (0);
+	return (1);
 }
 
 int	ss(t_stack **stack_a, t_stack **stack_b)
 {
-	if (sa(stack_a) || sb(stack_b))
-		return (1);
-	return (0);
+	return (sa(stack_a) && sb(stack_b));
 }

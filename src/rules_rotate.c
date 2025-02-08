@@ -6,7 +6,7 @@
 /*   By: ybounite <ybounite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 17:49:49 by ybounite          #+#    #+#             */
-/*   Updated: 2025/02/04 18:06:19 by ybounite         ###   ########.fr       */
+/*   Updated: 2025/02/06 09:27:50 by ybounite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	ra(t_stack **stack_a)
 
 int	rr(t_stack **stack_a, t_stack **stack_b)
 {
-	if (!ra(stack_a) || !rb(stack_b))
+	if (!rotate_stack_a(stack_a) || !rotate_stack_b(stack_b))
 		return (0);
 	ft_putendl_fd("rr", 1);
 	return (1);

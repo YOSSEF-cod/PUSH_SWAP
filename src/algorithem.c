@@ -6,7 +6,7 @@
 /*   By: ybounite <ybounite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 19:03:14 by ybounite          #+#    #+#             */
-/*   Updated: 2025/02/05 16:31:00 by ybounite         ###   ########.fr       */
+/*   Updated: 2025/02/06 09:55:02 by ybounite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ void	algorithem(t_stack **stack_a, t_stack **stack_b, t_data *data)
 		}
 		else
 			ra(stack_a);
-
 	}
 }
 

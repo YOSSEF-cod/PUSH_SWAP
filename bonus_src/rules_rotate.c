@@ -6,7 +6,7 @@
 /*   By: ybounite <ybounite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 17:49:49 by ybounite          #+#    #+#             */
-/*   Updated: 2025/02/04 18:16:49 by ybounite         ###   ########.fr       */
+/*   Updated: 2025/02/06 09:30:51 by ybounite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,5 @@ int	ra(t_stack **stack_a)
 
 int	rr(t_stack **stack_a, t_stack **stack_b)
 {
-	if (!ra(stack_a) || !rb(stack_b))
-		return (0);
-	return (1);
+	return (ra(stack_a) && rb(stack_b));
 }
